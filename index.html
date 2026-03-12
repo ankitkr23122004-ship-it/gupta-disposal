@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gupta Disposal - Review System</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background: #fffcf0; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+        .card { background: white; width: 100%; max-width: 400px; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 8px solid #facc15; }
+        .header { background: #111827; padding: 25px 20px; color: white; text-align: center; }
+        .header h2 { font-size: 1.3rem; margin-bottom: 5px; color: #facc15; }
+        .stars { color: #facc15; font-size: 1.1rem; margin-bottom: 8px; }
+        .content { padding: 25px 20px; text-align: center; }
+        .review-box { background: #fefce8; border: 1.5px dashed #facc15; border-radius: 10px; padding: 18px; margin-bottom: 20px; text-align: left; min-height: 80px; }
+        #text-box { color: #451a03; font-size: 0.95rem; line-height: 1.5; font-style: italic; }
+        .btn { background: #111827; color: white; border: none; width: 100%; padding: 15px; border-radius: 10px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: 0.3s; }
+        .btn:active { transform: scale(0.98); }
+        .footer { font-size: 0.75rem; color: #9ca3af; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="header">
+        <div class="stars">★★★★★</div>
+        <h2>GUPTA DISPOSAL</h2>
+        <p style="font-size: 0.8rem; opacity: 0.8;">Quality Disposable Items & Party Supplies</p>
+    </div>
+    <div class="content">
+        <div class="review-box">
+            <div id="text-box">Generating best review...</div>
+        </div>
+        <button class="btn" onclick="copyReview()">COPY & RATE 5-STARS</button>
+        <p class="footer">Thank you for shopping with us!</p>
+    </div>
+</div>
+
+<script>
+    const parts = {
+        opening: ["Best shop for", "Great place for", "Highly recommended for", "One stop shop for", "Top quality"],
+        items: ["disposable items", "party supplies", "wholesale disposal products", "cups, plates and wedding items", "biodegradable disposal items"],
+        feedback: ["at very reasonable prices.", "with excellent service.", "available at wholesale rates.", "best quality in this area.", "with wide range of varieties."],
+        closing: ["Must visit for party needs!", "Very happy with the behavior and rates.", "Best experience, very satisfied.", "Highly recommended shop!", "Always get genuine products here."]
+    };
+
+    function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+    function generateReview() {
+        let dice = Math.random();
+        if (dice < 0.5) {
+            return pick(parts.opening) + " " + pick(parts.items) + " " + pick(parts.feedback) + " " + pick(parts.closing);
+        } else {
+            return pick(parts.opening) + " " + pick(parts.items) + ". " + pick(parts.closing);
+        }
+    }
+
+    document.getElementById('text-box').innerText = generateReview();
+
+    function copyReview() {
+        const text = document.getElementById('text-box').innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Review Copied! Now Paste on Google Maps.");
+            window.location.href = "https://search.google.com/local/writereview?placeid=ChIJq-LYGD6p8jkR0zF3EESlWrU";
+        });
+    }
+</script>
+</body>
+</html>
