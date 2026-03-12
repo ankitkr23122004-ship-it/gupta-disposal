@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gupta Disposal - Patna</title>
+    <title>Gupta Disposal - Official Review</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background: #fffbeb; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
-        .card { background: white; width: 100%; max-width: 400px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 8px solid #eab308; }
-        .header { background: #1f2937; padding: 25px 20px; color: white; text-align: center; }
-        .header h2 { font-size: 1.4rem; color: #facc15; text-transform: uppercase; letter-spacing: 1px; }
-        .stars { color: #facc15; font-size: 1.2rem; margin: 8px 0; }
-        .content { padding: 25px; text-align: center; }
-        .review-box { background: #fefce8; border: 2px dashed #eab308; border-radius: 12px; padding: 20px; margin-bottom: 20px; min-height: 110px; display: flex; align-items: center; }
-        #text-box { color: #451a03; font-size: 1rem; line-height: 1.5; font-weight: 500; text-align: left; }
-        .btn { background: #eab308; color: #000; border: none; width: 100%; padding: 16px; border-radius: 12px; font-size: 1.1rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 0 #ca8a04; transition: 0.2s; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background: #fffcf0; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+        .card { background: white; width: 100%; max-width: 420px; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-top: 10px solid #f59e0b; }
+        .header { background: #111827; padding: 30px 20px; color: white; text-align: center; }
+        .header h2 { font-size: 1.5rem; color: #fbbf24; letter-spacing: 1px; }
+        .stars { color: #fbbf24; font-size: 1.3rem; margin: 10px 0; }
+        .content { padding: 30px; text-align: center; }
+        .review-box { background: #fffdf2; border: 2px dashed #f59e0b; border-radius: 15px; padding: 25px; margin-bottom: 25px; min-height: 140px; display: flex; align-items: center; }
+        #text-box { color: #451a03; font-size: 1.05rem; line-height: 1.6; text-align: left; font-style: italic; font-weight: 500; }
+        .btn { background: #f59e0b; color: #000; border: none; width: 100%; padding: 18px; border-radius: 15px; font-size: 1.2rem; font-weight: 800; cursor: pointer; transition: 0.3s; box-shadow: 0 5px 0 #b45309; }
         .btn:active { transform: translateY(4px); box-shadow: none; }
-        .footer { font-size: 0.8rem; color: #9ca3af; margin-top: 15px; font-weight: 500; }
+        .footer { font-size: 0.85rem; color: #9ca3af; margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -25,33 +25,68 @@
     <div class="header">
         <div class="stars">★★★★★</div>
         <h2>GUPTA DISPOSAL</h2>
-        <p style="font-size: 0.8rem; opacity: 0.9;">Wholesale & Retail Disposal Shop</p>
+        <p style="font-size: 0.9rem; opacity: 0.8;">Punpun's Trusted Shop</p>
     </div>
     <div class="content">
         <div class="review-box">
-            <div id="text-box">Review loading...</div>
+            <div id="text-box">Generating a real experience...</div>
         </div>
         <button class="btn" onclick="copyReview()">COPY & POST REVIEW</button>
-        <p class="footer">Patna's Best Shop for Party Items</p>
+        <p class="footer">100% Genuine Customer Feedback</p>
     </div>
 </div>
 
 <script>
-    const reviews = [
-        "Retail me bhi wholesale wala rate milta hai yahan, Patna me sasta aur badhiya disposal items ke liye best shop hai.",
-        "Gupta Disposal me products ki quality bahut achi hai aur rate ekdam wajib (genuine) hai. Wholesale price me retail ka saman mil jata hai.",
-        "Patna me sasta disposal items chahiye to yahi aaiye. Wholesale aur retail dono me market se kam price hai.",
-        "Saman ka bahut variety hai yahan. Plates, cups aur party items ka rate ekdam pocket friendly hai.",
-        "Best shop for disposal items in Patna. Retail me bhi wholesale price lagate hain, behavior bhi bahut acha hai.",
-        "Market se sasta aur badhiya quality. Gupta disposal me wholesale rate par retail saman milta hai, bahut sahi shop hai.",
-        "Party supplies aur disposable items ke liye best jagah hai. Price ekdam wholesale wala rehta hai.",
-        "Yahan ka rate aur quality dono best hai. Retail bacho ke liye bhi wholesale cost lag jata hai, must visit.",
-        "Bahut hi sasta aur badiya dukan hai Patna me. Wholesale rate me retail ka sara item mil jata hai.",
-        "Disposable items ka wholesale aur retail dono ka rate bahut kam hai yahan. Quality me koi compromise nahi."
-    ];
+    const pool = {
+        greeting: [
+            "Punpun me disposable items ki sabse badhiya dukan.",
+            "Patna mandi jane ki ab koi zarurat nahi hai.",
+            "Gupta Disposal se hamesha hum saman lete hain.",
+            "Finally ek aisi shop mili jahan sasta aur badiya dono hai.",
+            "Best experience raha is dukan se saman lene ka."
+        ],
+        product: [
+            " Plates, cups aur napkins ki bahut sari variety hai.",
+            " Shadi aur party ka sara disposable item ek hi jagah mil jata hai.",
+            " Product ki quality ekdam top notch rehti hai.",
+            " Variety itni hai ki aapko Patna market jaisa feel aayega.",
+            " Biodegradable aur plastic dono tarah ka item yahan available hai."
+        ],
+        price: [
+            " Rate ekdam wholesale wala lagate hain, chahe retail hi kyon na ho.",
+            " Market rate se sasta aur pocket friendly price hai.",
+            " Patna market se kam rate me yahan saman mil raha hai.",
+            " Cost bahut hi genuine hai, bilkul bhi mehnga nahi lagta.",
+            " Wholesale price me retail bacho ko bhi mil jata hai."
+        ],
+        service: [
+            " Bhaiya ka vyavhar bahut hi polite aur humble hai.",
+            " Shop owner ka nature bahut acha hai, sahi mashwara dete hain.",
+            " Service bahut fast hai aur packing bhi badiya karke dete hain.",
+            " Bohot purani aur vishwasni dukan hai Punpun ki.",
+            " Customer ke sath dealing bahut badiya hai Gupta ji ki."
+        ],
+        end: [
+            " Must visit for any function or party!",
+            " Sabko yahan se ek baar shopping karni chahiye.",
+            " Highly recommended for wholesale and retail.",
+            " 5 star quality and 5 star behavior.",
+            " Dhanyawad Gupta ji itne ache rate ke liye!"
+        ]
+    };
+
+    function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
     function generateReview() {
-        return reviews[Math.floor(Math.random() * reviews.length)];
+        // Randomly creates a 3 or 4 part sentence for maximum variety
+        let r = Math.random();
+        if (r < 0.4) {
+            return pick(pool.greeting) + " " + pick(pool.product) + " " + pick(pool.price) + pick(pool.end);
+        } else if (r < 0.7) {
+            return pick(pool.product) + " " + pick(pool.service) + " " + pick(pool.price) + pick(pool.end);
+        } else {
+            return pick(pool.greeting) + " " + pick(pool.service) + " " + pick(pool.price) + pick(pool.end);
+        }
     }
 
     document.getElementById('text-box').innerText = generateReview();
@@ -59,7 +94,7 @@
     function copyReview() {
         const text = document.getElementById('text-box').innerText;
         navigator.clipboard.writeText(text).then(() => {
-            alert("Review Copied! Ab Google par Paste karein.");
+            alert("Review Copied! Now Paste it on Google.");
             window.location.href = "https://search.google.com/local/writereview?placeid=ChIJq-LYGD6p8jkR0zF3EESlWrU";
         });
     }
