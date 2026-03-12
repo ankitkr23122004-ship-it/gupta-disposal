@@ -1,3 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gupta Disposal - Official</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background: #fffbeb; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+        .card { background: white; width: 100%; max-width: 400px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-top: 10px solid #f59e0b; }
+        .header { background: #111827; padding: 25px 20px; color: white; text-align: center; }
+        .header h2 { font-size: 1.4rem; color: #fbbf24; text-transform: uppercase; margin-bottom: 5px; }
+        .stars { color: #fbbf24; font-size: 1.2rem; margin-bottom: 5px; }
+        .content { padding: 25px; text-align: center; }
+        .review-box { background: #fffdf2; border: 2px dashed #f59e0b; border-radius: 15px; padding: 20px; margin-bottom: 25px; min-height: 130px; display: flex; align-items: center; justify-content: center; }
+        #text-box { color: #451a03; font-size: 1.05rem; line-height: 1.5; text-align: left; font-style: italic; font-weight: 500; }
+        .btn { background: #f59e0b; color: #000; border: none; width: 100%; padding: 18px; border-radius: 12px; font-size: 1.15rem; font-weight: 800; cursor: pointer; transition: 0.2s; box-shadow: 0 5px 0 #b45309; }
+        .btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #b45309; }
+        .footer { font-size: 0.8rem; color: #9ca3af; margin-top: 20px; font-weight: 500; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="header">
+        <div class="stars">★★★★★</div>
+        <h2>GUPTA DISPOSAL</h2>
+        <p style="font-size: 0.85rem; opacity: 0.8;">Wholesale & Retail | Punpun</p>
+    </div>
+    <div class="content">
+        <div class="review-box">
+            <div id="text-box">Loading your review...</div>
+        </div>
+        <button class="btn" onclick="copyReview()">COPY & POST REVIEW</button>
+        <p class="footer">Patna Mandi Rates in Punpun!</p>
+    </div>
+</div>
+
 <script>
     const data = {
         opening: [
@@ -38,20 +76,27 @@
 
     function generateReview() {
         let dice = Math.random();
-        
-        // 1. Short Review (Sirf 1 part) - 25% Chance
-        if (dice < 0.25) {
-            return pick(data.opening);
-        }
-        // 2. Medium Review (2 parts mix) - 45% Chance
-        else if (dice < 0.70) {
-            return pick(data.opening) + " " + pick(data.price);
-        }
-        // 3. Long Review (3-4 parts mix) - 30% Chance
-        else {
-            return pick(data.opening) + " " + pick(data.product) + " " + pick(data.price) + " " + pick(data.behavior);
-        }
+        // 1. Short (25%)
+        if (dice < 0.25) return pick(data.opening);
+        // 2. Medium (45%)
+        else if (dice < 0.70) return pick(data.opening) + " " + pick(data.price);
+        // 3. Long (30%)
+        else return pick(data.opening) + " " + pick(data.product) + " " + pick(data.price) + " " + pick(data.behavior);
     }
 
-    document.getElementById('text-box').innerText = generateReview();
+    // Display the review immediately
+    const finalReview = generateReview();
+    document.getElementById('text-box').innerText = finalReview;
+
+    function copyReview() {
+        const text = document.getElementById('text-box').innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Review Copied! Now Paste it on Google.");
+            window.location.href = "https://search.google.com/local/writereview?placeid=ChIJq-LYGD6p8jkR0zF3EESlWrU";
+        }).catch(err => {
+            console.error('Copy failed', err);
+        });
+    }
 </script>
+</body>
+</html>
