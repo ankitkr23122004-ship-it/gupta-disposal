@@ -1,48 +1,57 @@
 <script>
-    const pool = {
-        short: [
-            "Best shop for disposal items in Punpun.",
-            "Wholesale rate me retail saman mil jata hai.",
-            "Sasta aur sabse badhiya dukan.",
-            "Gupta ji ka vyavhar bahut acha hai.",
-            "Patna mandi wala rate yahi mil jata hai.",
-            "Quality me koi compromise nahi, very good.",
-            "Highly recommended shop!",
-            "Genuine price and genuine quality.",
-            "Best disposal shop in this area."
+    const data = {
+        opening: [
+            "Punpun me disposable items ki sabse badhiya dukan.",
+            "Patna mandi jane ki ab koi zarurat nahi hai.",
+            "Gupta Disposal se hamesha hum saman lete hain.",
+            "Finally ek sasta aur badiya shop mil gaya.",
+            "Best experience raha yahan se shopping karke.",
+            "Highly recommended shop for party items."
         ],
-        medium: [
-            "Punpun me itni achi shop hai pata nahi tha. Rate ekdam wholesale wala mil jata hai yahan.",
-            "Saman ka bahut variety hai yahan. Plates, cups aur party items ka rate ekdam pocket friendly hai.",
-            "Patna mandi jane ki ab koi zarurat nahi. Gupta Disposal me retail me bhi wholesale rate lagta hai.",
-            "Product ki quality ekdam top notch rehti hai aur behavior bhi bahut humble hai owner ka.",
-            "Shadi-vivah ka sara item wajib rate pe mil jata hai. Service bahut fast hai yahan ki."
+        product: [
+            " Plates, cups aur napkins ki bahut variety hai.",
+            " Shadi-vivah ka sara item ek hi jagah mil jata hai.",
+            " Product ki quality hamesha top notch rehti hai.",
+            " Yahan variety itni hai ki Patna market jaisa feel hai.",
+            " Har tarah ka disposable item stock me rehta hai.",
+            " Quality bahut sahi hai, market se sasta bhi hai."
         ],
-        long: [
-            "Finally ek aisi shop mili jahan sasta aur badiya dono hai. Patna market jane ka jhanjhat khatam ho gaya kyunki wahi rate Punpun me Gupta Disposal me mil jata hai. Must visit!",
-            "Gupta Disposal se hamesha hum saman lete hain. Wholesale price me retail ka sara item mil jata hai aur Gupta ji ka nature bhi bahut acha hai, sahi mashwara dete hain. Quality ekdam premium hai.",
-            "Bahut hi genuine dukan hai, rate fix aur sahi rehta hai. Shadi aur party ka sara disposable item ek hi jagah mil jata hai. Market se sasta aur pocket friendly price hai, 5 star service!",
-            "Variety itni hai ki aapko Patna market jaisa feel aayega. Retail bacho ko bhi wholesale cost par saman milta hai yahan. Packing aur service dono bahut fast hai, bahut purani aur vishwasni dukan hai."
+        price: [
+            " Rate ekdam wholesale wala mil jata hai yahan.",
+            " Market rate se sasta aur pocket friendly price hai.",
+            " Retail bacho ko bhi wholesale cost par saman dete hain.",
+            " Patna market se kam rate me badiya deal mil gayi.",
+            " Wholesale aur retail dono me wajib rate lagate hain.",
+            " Price itna kam hai ki koi bhi afford kar sakta hai."
+        ],
+        behavior: [
+            " Gupta ji ka nature bahut humble aur polite hai.",
+            " Service fast hai aur owner sahi mashwara dete hain.",
+            " Packing badiya hai aur vyavhar ekdam apnapan wala.",
+            " Bohot purani aur vishwasni dukan hai is area ki.",
+            " Dealing bahut achi hai, bilkul imandar dukan hai.",
+            " Customer satisfaction par pura dhyan dete hain."
         ]
     };
 
     function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
     function generateReview() {
-        let dice = Math.random(); // Random number between 0 and 1
+        let dice = Math.random();
         
-        if (dice < 0.35) { 
-            // 35% Chance of Short Review
-            return pick(pool.short);
-        } else if (dice < 0.80) { 
-            // 45% Chance of Medium Review
-            return pick(pool.medium);
-        } else { 
-            // 20% Chance of Long Review
-            return pick(pool.long);
+        // 1. Short Review (Sirf 1 part) - 25% Chance
+        if (dice < 0.25) {
+            return pick(data.opening);
+        }
+        // 2. Medium Review (2 parts mix) - 45% Chance
+        else if (dice < 0.70) {
+            return pick(data.opening) + " " + pick(data.price);
+        }
+        // 3. Long Review (3-4 parts mix) - 30% Chance
+        else {
+            return pick(data.opening) + " " + pick(data.product) + " " + pick(data.price) + " " + pick(data.behavior);
         }
     }
 
     document.getElementById('text-box').innerText = generateReview();
-    // Baki ka copyReview wala function purana wala hi rahega
 </script>
